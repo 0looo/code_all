@@ -92,9 +92,14 @@ vector(백터)
 
 matrix, dataframe
     생성
-        matrix(data = , nrow = 열갯수, ncol = col갯수)
+        matrix(data, #)
             : data를 nrow or ncol에 맞춰서 matrix 생성
-
+            #
+                nrow = 00 : row갯수 지정
+                ncol = 00 : col갯수 지정 (row, col 중 하나만 지정하면 자동 설정
+                byrow = FALSE(default) / TRUE
+                    : data를 row방향(FALSE)으로 입력할지, col(TRUE)으로 할지 지정
+                    
         data.frame(vec1, vec2..)
             : 각 vec를 col으로 하는 dataframe 생성
                 ## len이 다를 경우 가장 많은 vec에 맞춰서 반복실행  //  큰값과 특정 vce요소갯수가 서로소일경우 error
@@ -160,3 +165,25 @@ DATE(시간, 날짜)
         : str = int or num ==> 최소값, 1사분기, 중앙값, 평균, 3사분기, 최대값 출력
         : str = factor ==> level 갯수와 요소 출력
         : str = character ==> chr()와 동일하게 출력(요소 출력)
+        
+무작위 추출
+    무작위 고정
+        set.seed(00)
+            : 00 숫자에 따라 결과값 고정
+
+    sample
+        sample(startNum:endNum, 추출할 갯수, #)
+            : 범위안에 추출할 갯수 정함
+            # replace(복원추출 여부) = FALSE(defualt) / TRUE
+
+조건문
+    if
+        if(조건){ 참일때 출력 }
+        else{거짓일때 출력}
+        
+함수
+    function()
+        # 형식
+            함수명 = function(받을 변수){ 함수 내용 작성 ## }      
+            ## 주의
+                return (return할값)
