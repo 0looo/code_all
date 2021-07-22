@@ -187,3 +187,22 @@ DATE(시간, 날짜)
             함수명 = function(받을 변수){ 함수 내용 작성 ## }      
             ## 주의
                 return (return할값)
+
+데이터 불러오기 (data loading)
+    read.csv('파일경로')
+        * 파일경로 /는 한개, ||는 두개로 폴더표시
+        
+연산(교집합, 합집합, 조건처리)
+    & : and
+    | : or
+    
+자료분석
+    xtabs(#)
+        : col별 분포표 생성(count개념)
+        #
+            data = matrix   ## 미입력시 col입력마다 matrix명$col명 작성해야 함
+            sparse = 0부분을 .으로 출력
+            
+plyr
+    : excel 피벗테이블과 흡사한 기능
+    
