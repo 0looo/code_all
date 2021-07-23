@@ -107,6 +107,12 @@ matrix, dataframe
                 Col명 = vec1, ...
                     : col명 설정 가능
 
+    Slicing
+        subset
+            subset(matrix, 조건, #)
+                # select : 원하는 col만 출력 가능 
+
+
 DATE(시간, 날짜)
     # 공통사항
         요일
@@ -181,6 +187,8 @@ DATE(시간, 날짜)
         if(조건){ 참일때 출력 }
         else{거짓일때 출력}
         
+    ifelse(조건, 참출력, 거짓출력)
+        
 함수
     function()
         # 형식
@@ -195,6 +203,10 @@ DATE(시간, 날짜)
 연산(교집합, 합집합, 조건처리)
     & : and
     | : or
+        ## slicing일때 같은 col의 값은 c()로 사용가능
+    !=  : 틀림
+        ## col명에 -을 붙혀서 = -col명 으로 사용가능
+    
     
 자료분석
     xtabs(#)
