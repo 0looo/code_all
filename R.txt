@@ -1,3 +1,27 @@
+변수선언
+    a < - 2
+    a = 2
+        * 두가지 모두 가능
+
+주석처리
+    한줄주석
+        # 원하는 내용작성
+        
+    여러줄 주석
+        1. ctrl + shift + c  ## R Studio 기능, 역으로도 가능
+        2. 쓰지않는 변수 활용(꼼수)
+
+시스템설정 (Sys)
+    Sys.setlocale(category = , locale = )
+        : 기본 국가설정관련 함수
+
+    작업공간
+        getwd()
+            : 현제 작업공간 출력
+
+        setwd('디렉토리')
+            : 디렉토리로 작업공간 설정
+
 Package
     install
         명령어
@@ -42,6 +66,12 @@ Strings
     Tseries : 시계열 변수
     
     형태 확인
+        mode(변수)
+            : 변수 저장된 값의 type출력
+
+        class(변수)
+            : 변수 type 출력
+
         chr(vec or maxrix)
             : 내부 str형태 및 요소값 출력
 
@@ -54,20 +84,17 @@ Strings
             # : integer, numeric, factor, character
             : #에 해당하는 형태로 변환(원본 변경x ==> 별도 변수설정필요)
 
-변수선언
-    a < - 2
-    a = 2
-        * 두가지 모두 가능
-
-주석처리
-    한줄주석
-        # 원하는 내용작성
-        
-    여러줄 주석
-        1. ctrl + shift + c  ## R Studio 기능, 역으로도 가능
-        2. 쓰지않는 변수 활용(꼼수)
+String
+    stiptime(변수, format = '')
+        : str to POSIXlt
 
 vector(백터)
+    : 하나의 백터는 동일한 type의 요소를 갖음
+        ** 혼합하여 사용시 str로 변경될 확률이 높음 **
+
+    : col명 설정가능
+        names(변수명) <- c(col명,col명...)
+
     생성
         c(#)
             : column형태로 만들어짐(세로로) / console에 출력으론 가로로 나옴
@@ -84,11 +111,32 @@ vector(백터)
         rep(#)
             : 원하는 요소를 반복해서 넣을때 사용
             # 반복할 값, 반복횟수(default = 1)
-            ## 반복할값의 요소만큼 반복횟수를 별도로 백터로 주어서 사용가능
+                ## 반복할값의 요소만큼 반복횟수를 별도로 백터로 주어서 사용가능
+                ## times = 00   :: 00 만큼 처음부터 끝까지 반복
+                ## each = 00    :: 처음부터 00만큼 출력 후 다음 요소 출력
             
     추가
         vec1 = c(vec1, 추가할요소 or vec)
             : vec1뒤에 요소 or vec를 추가
+            
+    집합처리
+        union(x, y)
+            : x, y 합집합
+
+        setdiff(x, y)
+            : x - y
+            
+        intersect(x,y)
+            : 교집합
+
+    length(변수명)
+        : 변수의 길이 출력
+        
+    slicing
+        vec[c(00,00)]
+            : 00, 00번의 index값 출력
+                ** vec[00,00]의 경우 martirx로 인식하여 error
+                ** 주의 ** -의 경우 해당 index 제외하고 출력함
 
 matrix, dataframe
     생성
@@ -112,6 +160,14 @@ matrix, dataframe
             subset(matrix, 조건, #)
                 # select : 원하는 col만 출력 가능 
 
+숫자타입
+    complex :  복소수
+        Re(Z) 
+            : Z의 실수부분 출력
+        Im(Z)
+            : Z의 허수부분 출력
+        
+
 
 DATE(시간, 날짜)
     # 공통사항
@@ -129,8 +185,8 @@ DATE(시간, 날짜)
             %y : 12,13,14...
             %Y : 2012, 2013 ...
         시간
-            %H : 11, 23, 00...
-            %l(소문자L) : 11, 11, 12..
+            %H : (24시간기준) 11, 23, 00...
+            %l(소문자L) : (12시간기준) 11, 11, 12..
         
         분
             %M : 23, 45 ...
@@ -156,6 +212,9 @@ DATE(시간, 날짜)
         
         format(pos, %)
             : %에 해당하는 pos의 값을 출력(%은 공통사항 참조)
+            
+    Sys.time()
+        : 현제 시간 
     
     lubridate package(추가정리필요)
 
@@ -218,3 +277,11 @@ DATE(시간, 날짜)
 plyr
     : excel 피벗테이블과 흡사한 기능
     
+RSADBE
+    : R 제공하는 dataset
+    
+시각화
+    par(#)
+        #
+        mfrow = c(1,2)
+            : 한화면에 그래프 배치 갯수 , c(1,2) 경우 2개(1행2열)의 그래프 출력
