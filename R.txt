@@ -84,9 +84,18 @@ Strings
             # : integer, numeric, factor, character
             : #에 해당하는 형태로 변환(원본 변경x ==> 별도 변수설정필요)
 
-String
+String(chr)
     stiptime(변수, format = '')
         : str to POSIXlt
+        
+    문자 바꾸기(R Studio 기능)
+        ctrl + f 
+            : 주소 등 \ 변경시 
+
+factor
+    factor 설정
+        factor(data, levels = c(#원하는 순서#))
+            c()로 원하는 순서 설정 가능
 
 vector(백터)
     : 하나의 백터는 동일한 type의 요소를 갖음
@@ -166,8 +175,6 @@ matrix, dataframe
             : Z의 실수부분 출력
         Im(Z)
             : Z의 허수부분 출력
-        
-
 
 DATE(시간, 날짜)
     # 공통사항
@@ -266,7 +273,6 @@ DATE(시간, 날짜)
     !=  : 틀림
         ## col명에 -을 붙혀서 = -col명 으로 사용가능
     
-    
 자료분석
     xtabs(#)
         : col별 분포표 생성(count개념)
@@ -274,13 +280,36 @@ DATE(시간, 날짜)
             data = matrix   ## 미입력시 col입력마다 matrix명$col명 작성해야 함
             sparse = 0부분을 .으로 출력
             
-plyr
+plyr (패키지)
     : excel 피벗테이블과 흡사한 기능
+    
+    ddply(데이터,집계기준, summarise, 요약 변수)
+        # 사용예시 : https://wikidocs.net/73368
+        # groupby(python) 흡사
     
 RSADBE
     : R 제공하는 dataset
     
 시각화
+    ggplot2 (패키지)
+        ggplot(data, aes() + 그래프 + 기타옵션)
+        * 그래프 생성 순서 : 축생성 -> 그래프 -> 기타옵션(이름 등)
+        * 전반적인 예시 : https://wikidocs.net/73370
+        
+        * 축생성
+            ggplot(데이터명,aes(x=변수1,y=변수2)) (x축, y축을 정해준다.)
+            
+        * 그래프
+            geom_bar()
+            geom_histogram()
+            geom_boxplot()
+            geom_line()
+           
+        * 기타옵션
+            labs() : 범례제목 수정
+            ggtitle() : 제목 수정
+            xlabs(), ylabs() : x, y축 이름 수정
+
     par(#)
         #
         mfrow = c(1,2)
