@@ -91,6 +91,11 @@ String(chr)
     문자 바꾸기(R Studio 기능)
         ctrl + f 
             : 주소 등 \ 변경시 
+            
+    문자 합차기
+        paste(#)
+            : #를 합쳐서 출력
+            * 예시 및 설명 = https://m.blog.naver.com/coder1252/220985161855
 
 factor
     factor 설정
