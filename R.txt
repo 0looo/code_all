@@ -91,11 +91,24 @@ String(chr)
     문자 바꾸기(R Studio 기능)
         ctrl + f 
             : 주소 등 \ 변경시 
+
+         gsub(#,##, 데이터)
+                : 데이터 중 #를 ##로 변경
             
     문자 합차기
         paste(#)
+                * 예시 및 설명 = https://m.blog.naver.com/coder1252/220985161855
             : #를 합쳐서 출력
-            * 예시 및 설명 = https://m.blog.naver.com/coder1252/220985161855
+            : sep = ' '
+                : 붙히는 사이에 구분자를 넣을 수 있음 (default = '')
+
+        paste0()
+            : paste에서 sep = ''으로 넣은것과 동일한 함수
+
+
+    문자 분리(split)
+        strsplit(string,  split = #)
+            : # 을 기준으로 string을 분리하여 출력
 
 factor
     factor 설정
@@ -173,6 +186,10 @@ matrix, dataframe
         subset
             subset(matrix, 조건, #)
                 # select : 원하는 col만 출력 가능 
+                
+    관련 함수
+        colMeans(data)
+            : col별 평균값 출력
 
 숫자타입
     complex :  복소수
