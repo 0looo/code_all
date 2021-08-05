@@ -287,6 +287,9 @@ DATE(시간, 날짜)
 apply
     apply(data, 1 or 2, 적용 함수)
         # 1 = row별 계산, 2 = col별 계산
+
+    tapply(data, groupby기준, 적용 함수)
+        : group별 적용함수값 출력
         
 
 데이터 불러오기 (data loading)
@@ -318,7 +321,13 @@ plyr (패키지)
     ddply(데이터,집계기준, summarise, 요약 변수)
         # 사용예시 : https://wikidocs.net/73368
         # groupby(python) 흡사
-    
+
+dplyr (패키지)
+    %>%
+        # 단축키 : ctrl + shift + m
+        : 함수의 가독성을 높일 수 있는 방법, 가로안에 들어갈 내용을 먼저 적어주고
+            파이프(%>%)를 사용하여 이후에 함수를 기술하여서 작성가능하게 하는 함수
+
 RSADBE
     : R 제공하는 dataset
     
