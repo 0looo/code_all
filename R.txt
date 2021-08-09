@@ -3,6 +3,30 @@
     a = 2
         * 두가지 모두 가능
 
+Console
+    내용제거
+        cat("\014")
+
+    내용 output
+        capture.output(code)
+            : code에 출력되는 내용 저장
+            #
+                data = Console에 출력하는 함수 작성
+                file = '파일경로/저장할파일명'
+                sep = 구분자
+                append = FALSE(default = 파일이 같을 경우 새로작성) / TRUE( = 이어서 작성)
+                
+        sink('파일경로/파일명',#)
+            : Console에 나와있는 모든 내용저장
+                # append = FALSE(default = 파일이 같을 경우 새로작성) / TRUE( = 이어서 작성)
+                
+               
+Global Evnirnment
+    내용제거
+        rm(list=ls())
+    
+    
+
 주석처리
     한줄주석
         # 원하는 내용작성
@@ -97,6 +121,7 @@ String(chr)
             
     문자 합차기
         paste(#)
+            : vector to string
                 * 예시 및 설명 = https://m.blog.naver.com/coder1252/220985161855
             : #를 합쳐서 출력
             : sep = ' '
@@ -109,6 +134,13 @@ String(chr)
     문자 분리(split)
         strsplit(string,  split = #)
             : # 을 기준으로 string을 분리하여 출력
+            
+    문자열부분출력(string slcing)
+        substr(string, startIdx, endIdx)
+            : string에서 원하는 부분의 idx 문자열 추출
+            ## python과 다르게 endIdx값도 추출됨.
+        
+            
 
 factor
     factor 설정
@@ -164,7 +196,7 @@ vector(백터)
             : 00, 00번의 index값 출력
                 ** vec[00,00]의 경우 martirx로 인식하여 error
                 ** 주의 ** -의 경우 해당 index 제외하고 출력함
-
+                
 matrix, dataframe
     생성
         matrix(data, #)
@@ -300,6 +332,10 @@ apply
         fread
             : 대용량 파일 입출력에 장점.
             : 정리가 필요
+            
+    read_excel('파일경로')
+        ## library(readxl) 필요
+        
         
 연산(교집합, 합집합, 조건처리)
     & : and
