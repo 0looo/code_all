@@ -232,6 +232,9 @@ matrix, dataframe
             subset(matrix, 조건, #)
                 # select : 원하는 col만 출력 가능 
                 
+    transpose
+        t(matrix or dataframe)
+                
     관련 함수
         colMeans(data)
             : col별 평균값 출력
