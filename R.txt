@@ -1,3 +1,11 @@
+폴더(dir)
+    생성
+        dir.create('폴더경로')
+        
+     폴더의 파일목록
+        list.files('폴더경로')
+        
+
 변수선언
     a < - 2
     a = 2
@@ -8,7 +16,7 @@ Console
         cat("\014")
 
     내용 output
-        capture.output(code)
+        capture.output(code, #)
             : code에 출력되는 내용 저장
             #
                 data = Console에 출력하는 함수 작성
@@ -24,8 +32,6 @@ Console
 Global Evnirnment
     내용제거
         rm(list=ls())
-    
-    
 
 주석처리
     한줄주석
@@ -109,6 +115,9 @@ Strings
             : #에 해당하는 형태로 변환(원본 변경x ==> 별도 변수설정필요)
 
 String(chr)
+    문자갯수출력
+        nchar(string)
+
     stiptime(변수, format = '')
         : str to POSIXlt
         
@@ -134,6 +143,10 @@ String(chr)
     문자 분리(split)
         strsplit(string,  split = #)
             : # 을 기준으로 string을 분리하여 출력
+            
+        str_split(string, pattern)
+            : pattern(정규표현식) 기준으로 분리 출력
+                # library(stringr)
             
     문자열부분출력(string slcing)
         substr(string, startIdx, endIdx)
@@ -391,3 +404,17 @@ RSADBE
         #
         mfrow = c(1,2)
             : 한화면에 그래프 배치 갯수 , c(1,2) 경우 2개(1행2열)의 그래프 출력
+            
+정규 표현식(pattern)
+    \\d : 숫자(0~9)
+    \\D : 숫자가 아닌것
+    \\s : 공백
+    \\S : 공백이 아닌것
+    \\w : 단어
+    \\W : 단어가 아닌것
+    \\t : tab
+    \\n : Enter
+    ^ : 시작되는 문자
+    $ : 마지막 문자
+    \ : 탈출문자
+    | : or
