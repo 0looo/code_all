@@ -425,3 +425,17 @@ RSADBE
 
 fuction(함수)
     함수명 = funtion(내부변수 지정){함수내용 작성}
+
+library
+    install
+        install.packages('라이브러리명')
+    
+    import
+        library(라이브러리명)
+        
+    create(생성)
+        ## 필요한 library
+            'devtools'
+            'roxygen2'
+        
+        
