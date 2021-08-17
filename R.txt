@@ -209,6 +209,15 @@ vector(백터)
             : 00, 00번의 index값 출력
                 ** vec[00,00]의 경우 martirx로 인식하여 error
                 ** 주의 ** -의 경우 해당 index 제외하고 출력함
+
+    요소 찾기(index출력)
+        match('찾는요소',vec)
+            : vec에서 찾는요소의 첫번째 해당하는 index출력
+                # 찾는요소가 여러개인 경우 vec로 표현하여 사용가능
+
+        which(vec == '찾는요소')
+            : 찾는요소에 해당하는 index값들을 모두 출력
+                # 찾는요소가 여러개인 경우 vec로 표현하여 사용가능
                 
 matrix, dataframe
     생성
@@ -437,5 +446,4 @@ library
         ## 필요한 library
             'devtools'
             'roxygen2'
-        
         
