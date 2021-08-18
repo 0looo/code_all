@@ -1,10 +1,16 @@
+내용출력
+    print()
+
+    cat()
+        # print()와 차이점 = \n 사용가능.(print는 불가능)
+        # \n 여부로 인해 반복문에 많이 사용됨.
+
 폴더(dir)
     생성
         dir.create('폴더경로')
         
      폴더의 파일목록
-        list.files('폴더경로')
-        
+        list.files('폴더경로')        
 
 변수선언
     a < - 2
@@ -42,8 +48,20 @@ Global Evnirnment
         2. 쓰지않는 변수 활용(꼼수)
 
 시스템설정 (Sys)
-    Sys.setlocale(category = , locale = )
+    Sys.setlocale(category = , locale = '언어-국가')
         : 기본 국가설정관련 함수
+        
+    시간측정
+        Sys.time()
+            : 현재시간 출력
+                # 응용
+                    start_time <- Sys.time()
+                    
+                    // 측정하고자 하는 내용 작성
+                    
+                    end_time <- Sys.time()
+                    end_time - start_time
+                        ==> 사이 함수가 돌아가며 걸린 시간 출력
 
     작업공간
         getwd()
@@ -305,7 +323,7 @@ DATE(시간, 날짜)
     날짜 단순계산
     lubridate package
         ## import
-            require(lubridate)  : library()와 동일결과
+            library(lubridate)
         
         ## 사용가능 함수
             %m+% months(1) : 월을 1개월씩 더함
@@ -337,10 +355,20 @@ DATE(시간, 날짜)
 
 조건문
     if
-        if(조건){ 참일때 출력 }
-        else{거짓일때 출력}
+        if
+            if(조건){ 참일때 출력 }
+            else{거짓일때 출력}
+
+        ifelse(조건, 참출력, 거짓출력)
         
-    ifelse(조건, 참출력, 거짓출력)
+    case
+        ## 정리필요
+
+반복문
+    for
+        for(조건){반복할 함수}
+        
+
         
 함수
     function()
