@@ -447,3 +447,12 @@ library
             'devtools'
             'roxygen2'
         
+        ## 생성순서
+            1. library 2개 실행
+            2. create('library명')
+            3. './library명/R' 파일에 넣을 함수들 넣음
+            4. setwd('./library명')
+            5. document()
+            6. setwd('..')
+            7. install('library명')
+            
