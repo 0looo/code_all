@@ -302,7 +302,15 @@ DATE(시간, 날짜)
     Sys.time()
         : 현제 시간 
     
-    lubridate package(추가정리필요)
+    날짜 단순계산
+    lubridate package
+        ## import
+            require(lubridate)  : library()와 동일결과
+        
+        ## 사용가능 함수
+            %m+% months(1) : 월을 1개월씩 더함
+        
+    
 
 크기출력 (length, dim)
     length(vec1)
@@ -456,3 +464,6 @@ library
             6. setwd('..')
             7. install('library명')
             
+    함수 수정
+        ## 생성과정에서 document()부터 다시해줘야 적용됨.
+        ## error 발생시 r studio 재실행...(원인 모름)
