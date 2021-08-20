@@ -170,7 +170,10 @@ String(chr)
         substr(string, startIdx, endIdx)
             : string에서 원하는 부분의 idx 문자열 추출
             ## python과 다르게 endIdx값도 추출됨.
-        
+    
+    원하는 문자 출력(view창)
+        str_view_all(string,pattern)
+            # pattern은 '' 안에 작성
             
 
 factor
@@ -258,6 +261,9 @@ matrix, dataframe
         subset
             subset(matrix, 조건, #)
                 # select : 원하는 col만 출력 가능 
+                
+        head(matrix, n)
+            : 상위 n개 출력  // n  미입력시 6개 출력
                 
     transpose
         t(matrix or dataframe)
@@ -454,6 +460,7 @@ RSADBE
             : 한화면에 그래프 배치 갯수 , c(1,2) 경우 2개(1행2열)의 그래프 출력
             
 정규 표현식(pattern)
+    # '' 안에 pattern 사용해야함
     \\d : 숫자(0~9)
     \\D : 숫자가 아닌것
     \\s : 공백
@@ -466,6 +473,23 @@ RSADBE
     $ : 마지막 문자
     \ : 탈출문자
     | : or
+    . : 임의 한글자
+    + : 앞문자가 1개 이상
+    * : 앞문자가 0개 이상
+    ? : 앞에 문자가 없거나 하나거나. 
+        ex) ab?c
+                : a,c 사이에 b가 없거나 하나거나.
+    [] : 안에 글자들을 각각 or 묶어줌
+        ex) [abc]
+            : a or b or c
+    {n,m} : 앞문자의 갯수가 n개 이상 m개 이하
+        ex) a{1,3} : a가 1~3개
+            a{2} : a가 2개
+            a{2,} : a가 2개 이상
+    () : 안의 글자들을 and로 묶음
+        ex)(abc)
+            : 'abc'만 찾음
+    
 
 
 fuction(함수)
