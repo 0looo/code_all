@@ -607,6 +607,9 @@ pandas
 				*.isin() 가로안에 list형식으로 넣어야함, 요소의 정확한 값만 True
 
 			df.drop_duplicates() : 중복row제거
+			
+			df['col'].str.contains('str')
+				: 문자가 존재하는지 여부 확인
 	
 		groupby
 			함수
