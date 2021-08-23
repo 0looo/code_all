@@ -185,7 +185,7 @@ vector(백터)
     : 하나의 백터는 동일한 type의 요소를 갖음
         ** 혼합하여 사용시 str로 변경될 확률이 높음 **
 
-    : col명 설정가능
+    : col명 설정
         names(변수명) <- c(col명,col명...)
 
     생성
@@ -248,7 +248,7 @@ matrix, dataframe
                 nrow = 00 : row갯수 지정
                 ncol = 00 : col갯수 지정 (row, col 중 하나만 지정하면 자동 설정
                 byrow = FALSE(default) / TRUE
-                    : data를 row방향(FALSE)으로 입력할지, col(TRUE)으로 할지 지정
+                    : data를 row방향(T,TRUE)으로 입력할지, col(F,FALSE)으로 할지 지정
                     
         data.frame(vec1, vec2..)
             : 각 vec를 col으로 하는 dataframe 생성
@@ -256,6 +256,17 @@ matrix, dataframe
             ## col명 설정
                 Col명 = vec1, ...
                     : col명 설정 가능
+                    
+    병합
+        rbind(vec1,vec2)
+            : vec들을 각각 행으로 병합
+
+        cbind(vec1,vec2)
+            : vec를 col으로 병합
+            
+    컬럼명 설정(col names)
+        colnames(matrix) = c(col1, col2..)
+            : matrix의 c명 설정
 
     Slicing
         subset
@@ -267,7 +278,13 @@ matrix, dataframe
                 
     transpose
         t(matrix or dataframe)
-                
+        
+    함수 적용
+        apply(Matrix, MARGIN, FUC...)
+            # MARGIN = 1 : 행단위 함수적용 / = 2 : 열단위 함수적용
+              FUC : 적용할 함수 ex) max, mean, ...
+            **주의** 결과출력은 각 행별 결과를 열순서로 출력한다 
+
     관련 함수
         colMeans(data)
             : col별 평균값 출력
@@ -489,11 +506,18 @@ RSADBE
     () : 안의 글자들을 and로 묶음
         ex)(abc)
             : 'abc'만 찾음
-    
-
 
 fuction(함수)
     함수명 = funtion(내부변수 지정){함수내용 작성}
+    
+    파라미터(parmeter)
+        args(함수명)
+            : 함수의 parameter 출력
+    
+    함수설명
+        ?함수명
+        help(함수명)
+            : 함수에 대한 설명 출력(help 창)
 
 library
     install
