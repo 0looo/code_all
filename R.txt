@@ -257,6 +257,15 @@ matrix, dataframe
                 Col명 = vec1, ...
                     : col명 설정 가능
                     
+    정렬
+        sort()
+            : 값을 기준으로 오름차순 정렬
+            # decreasing = T : 내림차순 정렬
+
+        order()
+            : 값을 기준으로 오름차순 index를 출력
+            
+                    
     병합
         rbind(vec1,vec2)
             : vec들을 각각 행으로 병합
@@ -350,8 +359,6 @@ DATE(시간, 날짜)
         
         ## 사용가능 함수
             %m+% months(1) : 월을 1개월씩 더함
-        
-    
 
 크기출력 (length, dim)
     length(vec1)
