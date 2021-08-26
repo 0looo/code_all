@@ -174,7 +174,10 @@ String(chr)
     원하는 문자 출력(view창)
         str_view_all(string,pattern)
             # pattern은 '' 안에 작성
-            
+
+    숫자 일정갯수 출력(앞자리 0넣기)
+        sprintf("%03d", num1)
+            : 최소 3자리로 숫자를 표현함, 숫자 자리수가 부족할경우 앞부분을 0으로 체움
 
 factor
     factor 설정
@@ -298,13 +301,17 @@ matrix, dataframe
         colMeans(data)
             : col별 평균값 출력
 
-숫자타입
+숫자(numeric)
     complex :  복소수
         Re(Z) 
             : Z의 실수부분 출력
         Im(Z)
             : Z의 허수부분 출력
-
+            
+    나머지, 몫
+        num1 %/% num2 : num1/num2의 몫
+        num1 %% num2 : num1/num2의 나머지
+        
 DATE(시간, 날짜)
     # 공통사항
         요일
@@ -549,4 +556,7 @@ library
             
     함수 수정
         ## 생성과정에서 document()부터 다시해줘야 적용됨.
-        ## error 발생시 r studio 재실행...(원인 모름)
+        ## library 수정 후엔 install을 다시해줘야함.
+        
+    제거(remove)
+        remove.packages('')
