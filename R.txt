@@ -405,8 +405,6 @@ DATE(시간, 날짜)
     for
         for(조건){반복할 함수}
         
-
-        
 함수
     function()
         # 형식
@@ -422,7 +420,7 @@ apply
         : group별 적용함수값 출력
         
 
-데이터 불러오기 (data loading)
+데이터 불러오기 (data loading)  
     read.csv('파일경로')
         * 파일경로 /는 한개, ||는 두개로 폴더표시
         
@@ -430,11 +428,17 @@ apply
         fread
             : 대용량 파일 입출력에 장점.
             : 정리가 필요
-            
+
     read_excel('파일경로')
         ## library(readxl) 필요
         
-        
+Dataframe to excel
+    library(xlsx)
+    wrute.xlsx(data,'path', sheetName='', col.names=T, row.names=T, append=F)
+        ## sheetName만 변경시 sheet추가됨
+        ## 대용량일 경우 xlsx2이 더 빠름
+
+
 연산(교집합, 합집합, 조건처리)
     & : and
     | : or
@@ -560,3 +564,12 @@ library
         
     제거(remove)
         remove.packages('')
+        
+JSON
+    library
+        jsonlite
+        httr
+        
+    JSON to DataFrame
+        fromJSON(url)
+            : url의 json파일을 dataframe으로 변경
