@@ -157,7 +157,6 @@ String(chr)
         paste0()
             : paste에서 sep = ''으로 넣은것과 동일한 함수
 
-
     문자 분리(split)
         strsplit(string,  split = #)
             : # 을 기준으로 string을 분리하여 출력
@@ -403,7 +402,19 @@ DATE(시간, 날짜)
 
 반복문
     for
-        for(조건){반복할 함수}
+        for(조건){반복할 식}
+        
+    while
+        while(조건){반복할 식}
+            
+    repeat
+        repeat{반복할식}
+            : 함수안에 break를 사용해서 특정 조건시 끝마침.(안쓸경우 무한반복)
+            
+    ## 제한
+        next : 다음 반복 식으로 넘김
+        break : 반복문에서 밖으로 나옴
+        exit : 실행자체를 종료시킴(interrupt와 동일효과)
         
 함수
     function()
