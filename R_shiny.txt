@@ -1,0 +1,12 @@
+## 필요한 파일
+app.R
+    # 구성
+        ## 이전에는 ui, server를 다른 script로 저장하였으나 지금은 합쳐서 사용
+        1. ui
+        2. server
+    
+ui
+    ui <- fluidPage(##)
+        ##
+          titltePanel('')
+                : 좌측상단에 title 작성가능
