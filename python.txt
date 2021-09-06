@@ -738,26 +738,29 @@ plot
 			plt.xticks(**) : ()의 값으로 x축 표시 변경
 				## ()안에는 x축의 값을 넣어야 함.
 				
-
-
 		labeling(이름 작성)
 			plt.xlabel('') : x축 이름작성
 			plt.ylabel('') : y축 이름작성
 		
 		delete(축 없애기)
 			plt.axis('off')
+			
+	범례(그래프별 설명)
+		remove(범례제거)
+			plt.legend().remove()
 
-PYPLOT
-	scatterplot
-		.plot(kind='scatter',x='경도',y='위도') : 좌표에 점들료 표시
-			# 위치표시(지도) 등에 활용
-		plt.scatter(x, y, ##)
-			# x, y 에 맞는 list, array를 넣어서 표시
-			## c = 00 : 색상조절
-			## cmap : ??
+	그래프 종류
+		scatterplot
+			.plot(kind='scatter',x='경도',y='위도') : 좌표에 점들료 표시
+				# 위치표시(지도) 등에 활용
+			plt.scatter(x, y, ##)
+				# x, y 에 맞는 list, array를 넣어서 표시
+				## c = 00 : 색상조절
+				## cmap : ??
 
-	boxplot  : 데이터 분포파악에 효과적
-		.plot(kind = 'box')
+		boxplot  : 데이터 분포파악에 효과적
+			.plot(kind = 'box')
+
 
 seaborn (시각적인 표현은 가장 이쁨)
 	import seaborn as sns
