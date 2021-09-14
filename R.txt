@@ -505,6 +505,14 @@ RSADBE
         mfrow = c(1,2)
             : 한화면에 그래프 배치 갯수 , c(1,2) 경우 2개(1행2열)의 그래프 출력
             
+    plot(#)
+        # horiz = T
+            : x , y축 변경(위로상승하는 그래프가 옆으로 상승)
+        # cex.names = 00 (default = 1)
+            : y축 라벨 크기 조절
+        # cex.axis = 00 (default = 1)
+            : x 축 라벨 크기 조절
+            
 정규 표현식(pattern)
     # '' 안에 pattern 사용해야함
     \\d : 숫자(0~9)
