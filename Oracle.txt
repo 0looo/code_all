@@ -1,0 +1,8 @@
+TABLE
+    생성
+        create table table명{
+            col명 형식 not null,
+            col명 형식 );
+            
+    제거
+        drop table table명;
