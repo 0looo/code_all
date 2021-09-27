@@ -274,10 +274,17 @@ matrix, dataframe
 
         cbind(vec1,vec2)
             : vec를 col으로 병합
-            
-    컬럼명 설정(col names)
+    
+    index 출력
+        rownames(matrix)
+            : matrix의 index 출력
+        
+    컬럼명 설정(col names) / 컬럼명 출력
+        colnames(matrix)
+            : matrix의 컬럼 출력
         colnames(matrix) = c(col1, col2..)
             : matrix의 c명 설정
+        
 
     Slicing
         subset
