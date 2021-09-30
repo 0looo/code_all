@@ -403,9 +403,13 @@ DATE(시간, 날짜)
             else{거짓일때 출력}
 
         ifelse(조건, 참출력, 거짓출력)
-        
-    case
-        ## 정리필요
+
+분기문
+    swich(case문)
+        swich
+            swich(비교할변수(x),
+                case1 = ...  ,
+                case2 = ...  )
 
 반복문
     for
