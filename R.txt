@@ -456,7 +456,7 @@ apply
         
 Dataframe to excel
     library(xlsx)
-    wrute.xlsx(data,'path', sheetName='', col.names=T, row.names=T, append=F)
+    write.xlsx(data,'path', sheetName='', col.names=T, row.names=T, append=F)
         ## sheetName만 변경시 sheet추가됨
         ## 대용량일 경우 xlsx2이 더 빠름
 
