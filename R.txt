@@ -5,6 +5,13 @@
         # print()와 차이점 = \n 사용가능.(print는 불가능)
         # \n 여부로 인해 반복문에 많이 사용됨.
 
+RData
+    저장
+        save(저장할 데이터명, file = 경로)
+            # 저장할 데이터명 생략시 전체 저장
+    읽기(load)
+        load(file = 경로)
+
 폴더(dir)
     생성
         dir.create('폴더경로')
