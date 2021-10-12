@@ -413,9 +413,9 @@ DATE(시간, 날짜)
         ifelse(조건, 참출력, 거짓출력)
 
 분기문
-    swich(case문)
-        swich
-            swich(비교할변수(x),
+    switch(case문)
+        switch
+            switch(비교할변수(x),
                 case1 = ...  ,
                 case2 = ...  )
 
@@ -439,7 +439,7 @@ DATE(시간, 날짜)
     function()
         # 형식
             함수명 = function(받을 변수){ 함수 내용 작성 ## }      
-            ## 주의
+            ##
                 return (return할값)
 
 apply
