@@ -314,6 +314,21 @@ matrix, dataframe
     관련 함수
         colMeans(data)
             : col별 평균값 출력
+            
+list
+    생성
+        list명 = list()  # 빈 리스트
+        list명 = list(....)
+            : 넣은 순서대로 1, 2, ... indexing됨.
+        list명 = list(index명 = 넣을값, index명 = 값2...)
+            : list에 넣으면서 indexing 가능
+                ## 출력시 list명$index명 으로 출력가능
+        
+    
+    합치기
+        변수명 = append(list1, list2 ...)
+        
+    
 
 숫자(numeric)
     complex :  복소수
