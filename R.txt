@@ -626,3 +626,19 @@ JSON
     JSON to DataFrame
         fromJSON(url)
             : url의 json파일을 dataframe으로 변경
+
+SQL
+    library
+        RMariaDB
+            : mariaDB 사용시 필요
+            
+    RMariaDB
+        DB 연결(예제)
+            con <- dbConnect(
+                      RMariaDB::MariaDB(),
+                      dbname = 'DATABASE명',  # database명
+                      username = 'user명',    # user 명
+                      password = '비밀번호',   # password 명
+                      host = '000.000.000.000',  
+                      port = 0000)
+    
