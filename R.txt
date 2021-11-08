@@ -155,12 +155,16 @@ String(chr)
                 : 데이터 중 #를 ##로 변경
             
     문자 합차기
-        paste(#)
+        paste(#, ##)
             : vector to string
                 * 예시 및 설명 = https://m.blog.naver.com/coder1252/220985161855
             : #를 합쳐서 출력
-            : sep = ' '
-                : 붙히는 사이에 구분자를 넣을 수 있음 (default = '')
+                ##
+                sep = '구분자'
+                    : 다중 백터를 #에 넣었을때 백터사이에 넣을 값 (default = '')
+                collapse = '구분자'
+                    : 1개의 string으로 변경하면서 요소를 구분하기 위한 문자 설정(default = '')
+            
 
         paste0()
             : paste에서 sep = ''으로 넣은것과 동일한 함수
