@@ -337,6 +337,21 @@ MySQL
 			# 'select 이후 MySQL 편집기능 사용가능
 			## col명 변경, where 동시사용시 : table을 두번적음
 				select ascol명 from (select col명 ascol명 from table) table where 조건 
+				
+MariaDB
+	import pymysql
+	
+	db 연결
+		con = pymysql.connet(host = 'IP주소입력', user = 'userID', password = 'password', db = 'db명' , charset = 'utf8'
+		cur = con.cursor()
+	
+	sql문 작성
+		cur.execute(sql)
+			: 입력한 sql 결과에 따른 갯수를 출력함
+	
+	table 저장
+		cur.execute('select * from table')
+		table = cur.fetchall()
 
 scipy
 	import
