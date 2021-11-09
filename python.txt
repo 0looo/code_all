@@ -945,3 +945,10 @@ folium
 			import time
 		time.sleep(숫자)  * 2~3 추천
 			*page를 완전히 못읽었을 때 
+text mining
+	from konlpy.tag import Okt
+	
+	# 명사추출
+		okt = Okt()
+		okt.nouns(분석할str)
+	
