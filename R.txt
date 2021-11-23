@@ -109,6 +109,10 @@ Package
         require(패키지명)
             : 패키지 미설치시 경고
 
+Bool
+    is.null(변수)
+        : 변수가 NULL값인지 여부 판단(TRUE / FALSE)
+
 index(python과 차이점)
     vector
         # 1부터 시작함
@@ -458,7 +462,7 @@ DATE(시간, 날짜)
             switch(비교할변수(x),
                 case1 = ...  ,
                 case2 = ...  )
-
+                
 반복문
     for
         for(조건){반복할 식}
