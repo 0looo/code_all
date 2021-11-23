@@ -8,7 +8,7 @@
 RData
     저장
         save(저장할 데이터명, file = 경로)
-            # 저장할 데이터명 생략시 전체 저장
+            # envir 전체 저장시 저장할데이터명 => list = ls()
     읽기(load)
         load(file = 경로)
 
