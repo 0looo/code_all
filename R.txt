@@ -466,6 +466,8 @@ DATE(시간, 날짜)
 반복문
     for
         for(조건){반복할 식}
+        ## 조건에 dataframe을 넣을 경우 dataframe의 col을 기준으로 반복함.(low데이터로 돌리고 싶다면 별도 수정 필요)
+        
         
     while
         while(조건){반복할 식}
