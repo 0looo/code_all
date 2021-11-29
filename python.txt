@@ -3,8 +3,9 @@
 	% : 나머지
 	** : 제곱
 	
-	math
+	math	(library)
 		import math
+
 		올림
 			math.ceil(#) : #을 올림처리
 		내림
@@ -14,11 +15,11 @@
 	%timeit 측정할코드
 		: 걸린시간 출력(속도비교할때 사용)
 			
-random
-	import random
-	random int 추출
-		random.randint(startint, endint) : startint ~ endint사이의 정수를 랜덤추출
-
+랜덤 추출
+	random	(library)
+		import random
+		random int 추출
+			random.randint(startint, endint) : startint ~ endint사이의 정수를 랜덤추출
 str
 	좌우공백 지우기
 		좌우 공백 모두 삭제
@@ -40,6 +41,15 @@ str
 		"{}...{}".format(1,2..)
 			: String에 {}대신에 넣을 값을 순서에 맞게 format()안에 작성해줌.
 			
+	contains(포함여부, 검색)
+		in
+			## not in == in의 반대결과 출력
+			'검색할단어' in str
+				: str에 단어가 있을 경우 True / 없을 경우 False
+			
+		str.find('찾을단어')
+			: 해당단어가 있을 경우 첫번째 index 출력 / 없을 경우 -1 출력
+
 set
 	삽입
 		set.add(#)
@@ -56,10 +66,10 @@ list
 			: #번 자리에 ##값을 넣음
 			
 	delete(제거)
-		del a[index번호]
+		del list명[index번호]
 			: index번호를 넣어서 삭제가능
 			
-		list.remove(##)
+		list명.remove(##)
 			: list에서 ##을 제거
 			: ##가 여러개일경우 가장 앞에 있는 1개를 제거함
 			: ##이 없을 경우 error
@@ -78,7 +88,7 @@ list
 	
 	sort
 		sorted(list, ##)
-			: 숫자(오름차순),알파벳(알파벳순서),한글(ㄱ-힣)
+			: 숫자(오름차순),알파벳(알파벳순서),한글(ㄱ-?)
 			## reverse = True
 				: 역순으로 정리
 			## key = #
@@ -101,7 +111,7 @@ list
    
 zip
 	zip(list1, list2..)
-		: 출력은 각 list에서 하나씩 뺴서 tuple로 반환
+		: 출력은 각 list에서 하나씩 呼 tuple로 반환
 		: list 갯수만큼 l1, l2... in zip(list1,list2...) 할 경우 각 변수에 들어감.	
 
 반복문
