@@ -14,6 +14,10 @@
 %
 	%timeit 측정할코드
 		: 걸린시간 출력(속도비교할때 사용)
+		
+변수지정
+	globals()[변수명] = data
+		# R에서 assign과 동일한 역활 (assign(변수명, data)와 동일결과)
 			
 랜덤 추출
 	random	(library)
