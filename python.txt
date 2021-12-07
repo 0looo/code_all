@@ -73,6 +73,10 @@ set
 			: set에 여러값을 추가할때 사용
 
 list
+	생성
+		list comprehensdion
+			: 대괄호 안에 반복문을 작성하여 list 생성. for문 안에 list.append()를 사용하여 넣는 것보다 빠른 결과 도출 및 코드 단순화를 달성함.
+			ex) [i for i in range(10)] ==> [0,1,2,3,4...8,9]인 list 생성
 	삽입
 		list.append(##)
 			: ##를 맨 마지막 인덱스에 넣어줌
