@@ -149,10 +149,15 @@ list
 		: input과 동일하나 속도가 빠름.
 		: 단일행을 받을 때 /n도 같이 출력되니 조심
 		** import sys 필요
+		
+map
+	map(function, list or tuple or ..)
+		: 뒤에 들어오는 list에 요소들을 fuction 처리하여 list로 반환
+			# 특정 개수의 변수 , *L 할경우 앞의 변수 갯수만큼 변수처리 이후 나머지 요소들은 하나의 list로 처리
    
 zip
 	zip(list1, list2..)
-		: 출력은 각 list에서 하나씩 呼 tuple로 반환
+		: list에서 요소를 하나씩 뽑아서 tuple로 반환
 		: list 갯수만큼 l1, l2... in zip(list1,list2...) 할 경우 각 변수에 들어감.	
 
 반복문
