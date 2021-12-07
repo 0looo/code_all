@@ -26,7 +26,7 @@
 		import random
 		random int 추출
 			random.randint(startint, endint) : startint ~ endint사이의 정수를 랜덤추출
-str
+string
 	좌우공백 지우기
 		좌우 공백 모두 삭제
 			str.strip()
@@ -55,6 +55,15 @@ str
 			
 		str.find('찾을단어')
 			: 해당단어가 있을 경우 첫번째 index 출력 / 없을 경우 -1 출력
+	
+	시작단어 확인
+		str.startswith('확인할단어')
+			: str이 '확인할단어'로 시작하는지 여부 판단(T/F)
+	
+	종료단어 확인
+		str.endswith('확인할단어')
+			:str이 '확인할단어'로 종료되는지 여부 판단(T/F)
+			
 
 set
 	삽입
