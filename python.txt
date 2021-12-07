@@ -78,6 +78,15 @@ string
 				: 00개 만큼의 길이를 만들면서 부족한 길이만큼 앞에 0을 붙힘
 				: 앞에 0붙히는 함수로 유용함.(월 표시할때 유용)
 
+	String Concatenation (문자열 합치기)
+		str1 + str2
+			: str1, str2를 합쳐서 출력
+		
+		'%s%s'%(str1,str2)
+			# % str1, str2대신 dict를 넣어 반복하고 싶은경우
+				-> '%(key1)s%(key2)s'%dict
+		
+
 set
 	삽입
 		set.add(#)
