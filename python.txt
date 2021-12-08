@@ -182,6 +182,14 @@ zip
 			ex) for i, l in enumerate(list, ##) ==> i = index, l= 요소값으로 적용됨
 				## : index시작을 변경가능 (defualt = 0)
 
+
+제한문
+	continue
+		: 강제적으로 다음 loop를 돌리게 함.
+	
+	pass
+		: 실행할 코드가 없다는 의미, 단순히 코드안에 TRUE 적는 것과 다를게 없음.
+
 Try(예외처리)
 	: error가 발생하는(예상되는) 코드 처리
 	# 사용방법
@@ -194,6 +202,7 @@ Try(예외처리)
 		error가 발생하지 않았을 때 실행할 코드
 	finally : 
 		error 유무와 상관없이 try 종료 후 실행할 문장
+		
 
 sample data
 	sklean.datasets : 분류모델에 좋은 sample 제공
