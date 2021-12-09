@@ -124,10 +124,10 @@ list
 			: ## 을 비워둘경우 맨마지막 요소 출력 및 제거
 			: ##에 index값을 넣어서 추출가능
 	
-	요소 추출
-		list.index(요소값)
-			: index를 사용해서 요소 추출
-	
+	요소 index 확인
+		list.index(#)
+			: list 내부에 #가 해당하는 요소값 출력, #가 없을 경우 error (ValueError) 발생
+			
 	list to string		
 		'**'.join(list1)
 			: list요소 사이에 **를 넣으면서 string으로 출력
