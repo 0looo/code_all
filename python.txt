@@ -168,6 +168,190 @@ dict(사전)
 	get
 		dict.get('key',##)
 			: dict에 key가 있을 경우 해당하는 value, 없을 경우 ## 출력
+			
+DataFrame
+	저장
+		df.to_csv(파일명, sep = '')
+			* sep : 나누는 기준이 별도지정필요할때
+				: .tsv파일일 경우 \t 입력
+
+	불러오기
+		pd.read_csv(파일명,##)		
+			##
+			sep : 나누는 기준이 별도지정필요할때
+				: .tsv파일일 경우 \t 입력
+			parse_dates=[col] : 지정한 col을 datatype으로 출력
+			index_col = 0 : 첫col이 Unnamed: 0 일때 삭제해서 출력
+			skiprows=00 : 00만큼 row를 skip하고 불러들임
+			thousands = ','   : 천자리 ,를 없애서 불러들임
+		pd.read_excel(파일명, ##)
+			## _csv 동일
+
+	생성
+		pd.DataFrame(list or dict , index=['','',...])
+			* index갯수만큼 적어줘야 함
+			* dict의 경우 keys => col
+
+	병합
+		pd.concat([df1, df2], ignore_index = Ture, axis = 1, join = **)
+			* list에 DataFrame넣었을 시 concat(list)
+			* df을 list에 넣었을때는 list를 넣음
+			* ignore_index = Ture   => index를 새로 지정(0~)
+			* axis = 0   => 기본값, raw를 추가하는 방식
+			  axis = 1   => col을 추가하는 방식
+			* join = ''
+				1)outer : 기본값, 전체 병합
+				2)inner : 동일한 col만
+
+		merge(df1, df2, on=col명, how = **)
+			* on => df의 col이 다를때 left_on, right_on 으로 사용가능
+			* how
+				1)outer 2)inner  3)left  4) right
+		
+		append
+			df1.append(df2, #)
+				: pd.concat([df1,df2]와 동일한 결과 출력)
+				# 
+					ignore_index = True : 기존의 index를 가져오는 성질 없앰.
+		
+	정보확인
+		.info()
+		.describe()
+			: 갯수, 평균, 표준편차. 최소값~25%..~최대값
+
+	index, column
+		.reset_index(#)
+			: index를 0 ~ 로 변경
+			# drop = True : col추가 방지가능
+
+		df.rename(index = {'index명' : '바꿀index명'..} , columns = {col명:바꿀col명,...}, inplace = True)
+			: index, column 명 동시변경가능
+			# 원본반영안됨. (inplace하면 가능)
+
+		df.index = ['index명'....]
+			: list기준으로 index명 변경
+
+		df.columns = ['col'명...]
+			: list기준으로 columns명 변경
+
+	slicing
+		df.loc[row명, col명]
+			*여러개 선택시 : [[row명, row명..],[col명,col명...]]
+			*구간선택시 [ : 가능]
+
+		df.iloc[row번호, col번호]
+				*여러개 선택시 : [[row번호, row번호..],[col번호,col번호...]]
+			*구간선택시 [ : 가능]
+
+		df[조건] : 조건에 성립하는 값만 출력
+			*조건의 출력값이 index의 갯수에 맞게 나와야함
+			* and : & / or : | , 조건마다 ()로 묶어야 함.
+			*앞에 ~붙이면 not
+
+		df.isin([])
+			*.isin() 가로안에 list형식으로 넣어야함, 요소의 정확한 값만 True
+
+		df.drop_duplicates() : 중복row제거
+
+		df['col'].str.contains('str')
+			: 문자가 존재하는지 여부 확인
+
+	groupby
+		함수
+			.get_group('group기준의 요소 중 입력') : 요소가 포함된 row출력 
+				*입력값은 1개밖에 안됨.
+
+			.count() : index별 갯수 출력
+				* grouped에 col지정안할경우 모든값이 1로 출력
+
+			.mean()
+			.sum()
+				* grouped에 col지정안할경우 수식함수는 수치col들을 원본으로 출력
+
+		.agg(*)				
+			* {col : [**], col :** }
+			# 함수만 넣으면 모든col에 적용
+			# col마다 수식다르게 적용가능
+			# 수식이 복수일 경우 []사용
+			** : 'mean', 'std', sum, min, max, len, 'count'...
+
+		.transform(*)
+			: 해당하는 col을 원래 df의 index에 맞춰서 값들을 출력
+
+		.apply(*) : .agg()와 동일하지만 agg가 오류날경우 .transform과 동일해짐
+
+
+		2개 이상 col을 groupby
+			.groupby([col명, col명])         * 2개이상일때 []로 col묶어줌
+			.unstack() :
+
+	index&column 변경
+
+		index 변경
+			df.reindex(list) : list로 df의 index가 변경
+				* 원본미반영
+				* 기존의 index에 있는 값들은 list순서에 맞게 정렬, 없으면 nan값으로 row생성
+
+			df.set_index(**, inplace = True)  : 해당 col을 index로 변경
+				* inplace = True 제거시 원본미반영
+				** df['col'] 형식으로 기입 :  기존 col이 남아있음
+				** 'col'형식으로 기입 : 기존 col 삭제됨
+
+		column 변경
+			## 
+
+
+	type변경
+		df.col.astype(type)
+			type으로 변경가능
+				*datetime으로 변경불가
+
+		pd.to_numeric(df['col명'],errors='coerce')
+			int로 변경  + 불가한 값있어도 무시하고 진행
+
+		datetime
+			pd.to_datetime(df[col])
+				*응용     1)요일 : dt.dayofweek					
+					2)pd.date_range(시작일자,종료일자) : 사이기간 자동출력(마지막날도 포함)
+
+	값 정렬
+		df.sort_values('col', ascending = Fales,)
+			*col : col의 값을 기준으로 정렬 / by=['col']으로 기입가능
+
+	null처리
+		null 위치확인(+갯수확인)
+			pd.isnull(df)
+				: null값일 때 True
+				 + 응용 : .sum() 해서 null갯수 출력
+
+		대안값 넣기
+
+			df.fillna('대신할값')
+				:null을 넣어줌
+				*값 대신 1)ffill : 위의 값 넣기  2)bfill : 아랫값 넣기
+				*df[''] = df.col.fillna(df['col'])
+					:특정 col의 nan값을 다른 col값으로 체울때 사용
+			df.interpolate()
+				: 선형근사값 넣어줌
+
+		제거
+			1. df 전체 기준
+				df.dropna(axis = 0 or 1)
+					:null이 포함된 row를 제거  (axis = 1  => col제거)
+
+			2. col 기준
+				df[pd.notnull(df.col)]
+
+		conda prompt
+			설치 
+				pip install missingno
+			import
+				import missingno as msno
+			null값 표시
+				msno.matrix(df)
+			*using heatmap
+				msno.heatmap(df) : null값의 element를 heatmap으로 표시
+					: 동일값을 갖는 상위 대칭부분은 미표시
 
 입력값 받기
 	공통사항
@@ -655,182 +839,7 @@ pandas
 			.to_frame()
 				:series를 dataframe으로 변경
 
-	DataFrame
-		저장
-			df.to_csv(파일명, sep = '')
-				* sep : 나누는 기준이 별도지정필요할때
-				        : .tsv파일일 경우 \t 입력
-
-		불러오기
-			pd.read_csv(파일명,##)		
-				##
-				sep : 나누는 기준이 별도지정필요할때
-					: .tsv파일일 경우 \t 입력
-				parse_dates=[col] : 지정한 col을 datatype으로 출력
-				index_col = 0 : 첫col이 Unnamed: 0 일때 삭제해서 출력
-				skiprows=00 : 00만큼 row를 skip하고 불러들임
-				thousands = ','   : 천자리 ,를 없애서 불러들임
-			pd.read_excel(파일명, ##)
-				## _csv 동일
-
-		생성
-			pd.DataFrame(list or dict , index=['','',...])
-				* index갯수만큼 적어줘야 함
-				* dict의 경우 keys => col
-
-		병합
-			pd.concat([df1, df2], ignore_index = Ture, axis = 1, join = **)
-				* list에 DataFrame넣었을 시 concat(list)
-				* df을 list에 넣었을때는 list를 넣음
-				* ignore_index = Ture   => index를 새로 지정(0~)
-				* axis = 0   => 기본값, raw를 추가하는 방식
- 				  axis = 1   => col을 추가하는 방식
-				* join = ''
-					1)outer : 기본값, 전체 병합
-					2)inner : 동일한 col만
-
-			merge(df1, df2, on=col명, how = **)
-				* on => df의 col이 다를때 left_on, right_on 으로 사용가능
-				* how
-					1)outer 2)inner  3)left  4) right
-		정보확인
-			.info()
-			.describe()
-				: 갯수, 평균, 표준편차. 최소값~25%..~최대값
-
-		index, column
-			.reset_index(#)
-				: index를 0 ~ 로 변경
-				# drop = True : col추가 방지가능
-				
-			df.rename(index = {'index명' : '바꿀index명'..} , columns = {col명:바꿀col명,...}, inplace = True)
-				: index, column 명 동시변경가능
-				# 원본반영안됨. (inplace하면 가능)
-				
-			df.index = ['index명'....]
-				: list기준으로 index명 변경
-				
-			df.columns = ['col'명...]
-				: list기준으로 columns명 변경
-
-		slicing
-			df.loc[row명, col명]
-				*여러개 선택시 : [[row명, row명..],[col명,col명...]]
-				*구간선택시 [ : 가능]
-				
-			df.iloc[row번호, col번호]
-	           			*여러개 선택시 : [[row번호, row번호..],[col번호,col번호...]]
-				*구간선택시 [ : 가능]
-
-			df[조건] : 조건에 성립하는 값만 출력
-				*조건의 출력값이 index의 갯수에 맞게 나와야함
-				* and : & / or : | , 조건마다 ()로 묶어야 함.
-				*앞에 ~붙이면 not
-				
-			df.isin([])
-				*.isin() 가로안에 list형식으로 넣어야함, 요소의 정확한 값만 True
-
-			df.drop_duplicates() : 중복row제거
-			
-			df['col'].str.contains('str')
-				: 문자가 존재하는지 여부 확인
 	
-		groupby
-			함수
-				.get_group('group기준의 요소 중 입력') : 요소가 포함된 row출력 
-					*입력값은 1개밖에 안됨.
-
-				.count() : index별 갯수 출력
-					* grouped에 col지정안할경우 모든값이 1로 출력
-
-				.mean()
-				.sum()
-					* grouped에 col지정안할경우 수식함수는 수치col들을 원본으로 출력
-
-			.agg(*)				
-				* {col : [**], col :** }
-				# 함수만 넣으면 모든col에 적용
-				# col마다 수식다르게 적용가능
-				# 수식이 복수일 경우 []사용
-				** : 'mean', 'std', sum, min, max, len, 'count'...
-
-			.transform(*)
-				: 해당하는 col을 원래 df의 index에 맞춰서 값들을 출력
-
-			.apply(*) : .agg()와 동일하지만 agg가 오류날경우 .transform과 동일해짐
-				
-	
-			2개 이상 col을 groupby
-				.groupby([col명, col명])         * 2개이상일때 []로 col묶어줌
-				.unstack() :
-
-		index&column 변경
-		
-			index 변경
-				df.reindex(list) : list로 df의 index가 변경
-					* 원본미반영
-					* 기존의 index에 있는 값들은 list순서에 맞게 정렬, 없으면 nan값으로 row생성
-
-				df.set_index(**, inplace = True)  : 해당 col을 index로 변경
-					* inplace = True 제거시 원본미반영
-					** df['col'] 형식으로 기입 :  기존 col이 남아있음
-					** 'col'형식으로 기입 : 기존 col 삭제됨
-
-			column 변경
-			
-
-		type변경
-			df.col.astype(type)
-				type으로 변경가능
-					*datetime으로 변경불가
-			
-			pd.to_numeric(df['col명'],errors='coerce')
-				int로 변경  + 불가한 값있어도 무시하고 진행
-
-			datetime
-				pd.to_datetime(df[col])
-					*응용     1)요일 : dt.dayofweek					
-						2)pd.date_range(시작일자,종료일자) : 사이기간 자동출력(마지막날도 포함)
-
-		값 정렬
-			df.sort_values('col', ascending = Fales,)
-				*col : col의 값을 기준으로 정렬 / by=['col']으로 기입가능
-			
-		null처리
-			null 위치확인(+갯수확인)
-				pd.isnull(df)
-					: null값일 때 True
-					 + 응용 : .sum() 해서 null갯수 출력
-
-			대안값 넣기
-		
-				df.fillna('대신할값')
-					:null을 넣어줌
-					*값 대신 1)ffill : 위의 값 넣기  2)bfill : 아랫값 넣기
-					*df[''] = df.col.fillna(df['col'])
-						:특정 col의 nan값을 다른 col값으로 체울때 사용
-				df.interpolate()
-					: 선형근사값 넣어줌
-
-			제거
-				1. df 전체 기준
-					df.dropna(axis = 0 or 1)
-						:null이 포함된 row를 제거  (axis = 1  => col제거)
-
-				2. col 기준
-					df[pd.notnull(df.col)]
-
-			conda prompt
-				설치 
-					pip install missingno
-				import
-					import missingno as msno
-				null값 표시
-					msno.matrix(df)
-				*using heatmap
-					msno.heatmap(df) : null값의 element를 heatmap으로 표시
-						: 동일값을 갖는 상위 대칭부분은 미표시
-
 
 	pivot_table  : 시각적으로 가장 이쁘게 나옴
 		pd.pivot_table(df, index=''(2개이상일때는 []안에),values = '')
