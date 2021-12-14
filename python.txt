@@ -5,7 +5,6 @@ jupyter 사용관련 내용
 
 os
 	import os
-	
 	os.system(#)
 		: 명령프롬프트(cmd)에 작성하는 것과 동일한 결과 출력
 		
