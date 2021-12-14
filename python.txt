@@ -9,6 +9,20 @@ os
 	os.system(#)
 		: 명령프롬프트(cmd)에 작성하는 것과 동일한 결과 출력
 
+thread
+	: 병렬연산을 위한 함수
+	import threading
+	
+	th = threading.Thread(target = function(), args = (function변수))
+		: target은 함수를 넣고, 해당함수에 넣을 변수들은 args에 대입하여 thread 지정
+	
+	th.start()
+		: 지정한 thread를 실행
+	
+	th.join()
+		: thread하는 작업이 종료될때까지 기다리게 해주는 함수.
+		: 선후관계 해결을 위한 해결책
+		
 사칙연산
 	// : 몫
 	% : 나머지
