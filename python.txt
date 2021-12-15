@@ -521,8 +521,8 @@ Txt 파일 생성 / 읽기
 		(?!...$) # 부정형
 		
 	바꾸기
-		:
-	
+		: 차후 정리
+		# https://wikidocs.net/4309
 	
 sample data
 	sklean.datasets : 분류모델에 좋은 sample 제공
