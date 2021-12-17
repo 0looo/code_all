@@ -133,6 +133,9 @@ list
 		list.insert(#, ##)
 			: #번 자리에 ##값을 넣음
 			
+		lterable (ex list) 추가
+			list.extend(literable 변수)
+			
 	delete(제거)
 		del list명[index번호]
 			: index번호를 넣어서 삭제가능
