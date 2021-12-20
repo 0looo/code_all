@@ -136,6 +136,11 @@ list
 		lterable (ex list) 추가
 			list.extend(literable 변수)
 			
+		list.extend(list_temp)
+			: list에 list_temp를 추가함(list 재정의 필요 없음)
+		list + list1
+			: list와 list1의 요소를 합친 결과 출력(합친 변수 활용시 재정의 필요)
+			
 	delete(제거)
 		del list명[index번호]
 			: index번호를 넣어서 삭제가능
