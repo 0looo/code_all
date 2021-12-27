@@ -1,0 +1,122 @@
+from pyhive import hive
+import pandas as pd
+import os
+import psutil
+import sys
+import time
+import datetime
+
+
+## 출력값 메모장 저장
+sys.stdout = open('./output.txt'
+                  , 'a')
+                  
+                  
+                  
+for exec_num in range(0, 2):
+    print('--------------------------------------------')
+    print(datetime.datetime.now().strftime('%Y/%m/%d %H:%M'))
+    start = time.time()
+    # BEFORE code
+    print(f"== {exec_num:2d} exec")
+    # general RAM usage
+    memory_usage_dict = dict(psuiitil.virtual_memory()._asdict())
+    memory_usage_percent = memory_usage_dict['percent']
+    print(f"BEFORE CODE: memory_usage_percent: {memory_usage_percent}%")
+    # current process RAM usage
+    pid = os.getpid()
+    current_process = psutil.Process(pid)
+    current_process_memory_usage_as_KB = current_process.memory_info()[0] / 2.**20
+    print(f"BEFORE CODE: Current memory KB   : {current_process_memory_usage_as_KB: 9.3f} KB")
+    
+    conn = hive.Connection(host='10.12.108.234', port=10000, username='zs03744', password='zs03744!01', database='default', auth='LDAP')
+    cur = conn.cursor()
+    sql = '''
+SELECT T1.HK
+    , T1.CEQ_PNO
+    , T1.CO_SCN_CD
+    , T1.AID_FCLT_CD
+    , T1.PART_NM
+    , T1.PART_NM_CD
+    , T1.CREATE_DATE
+FROM(
+	SELECT DISTINCT 'K' AS HK
+	, CEQ_PNO
+    , CO_SCN_CD
+    , AID_FCLT_CD
+    , PART_NM
+    , PART_NM_CD
+    , FROM_UNIXTIME(UNIX_TIMESTAMP(CURRENT_DATE, 'yyyyMMdd'),'yyyyMMdd') AS CREATE_DATE 
+    FROM kmc_ksw.t_part_mst
+	) AS T1
+LEFT JOIN(
+	SELECT DISTINCT 'H' as HK
+		, CEQ_PNO
+		, CO_SCN_CD
+		, AID_FCLT_CD
+		, PART_NM
+		, PART_NM_CD
+		, FROM_UNIXTIME(UNIX_TIMESTAMP(CURRENT_DATE, 'yyyyMMdd'),'yyyyMMdd') AS CREATE_DATE
+    FROM hmc_hsw.t_part_mst
+	WHERE CEQ_PNO IS NULL
+	) AS T2
+ON T1.CEQ_PNO = T2.CEQ_PNO
+	AND T1.CO_SCN_CD = T2.CO_SCN_CD      
+    '''
+    cur.execute(sql)
+    
+    
+    df = cur.fetchall()
+    df
+       
+    
+    # AFTER  code
+    memory_usage_dict = dict(psutil.virtual_memory()._asdict())
+    memory_usage_percent = memory_usage_dict['percent']
+    print(f"AFTER  CODE: memory_usage_percent: {memory_usage_percent}%")
+    # current process RAM usage
+    pid = os.getpid()
+    current_process = psutil.Process(pid)
+    current_process_memory_usage_as_KB = current_process.memory_info()[0] / 2.**20
+    print(f"AFTER  CODE: Current memory KB   : {current_process_memory_usage_as_KB: 9.3f} KB")
+    print("--"*30)
+    print('소요시간 : ', time.time()-start)
+
+
+
+
+
+
+from bs4 import BeautifulSoup as bs
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import schedule
+import time
+
+
+
+driver = webdriver.Chrome('chromedriver.exe')
+
+
+def analyze():
+    ## 시간 측정 시작
+    ## 분석 셀 클릭
+    driver.find_element_by_xpath\
+    ('//*[@id="f718a6cb-0d42-4cba-901e-63e31c5b7fa7"]/div[3]/div[2]/div[2]/div[1]').click()
+    # driver.find_element_by_xpath('//*[@id="f718a6cb-0d42-4cba-901e-63e31c5b7fa7"]/div[7]/div[2]/div[2]/div[2]/div/div[6]/div[1]/div/div/div/div[5]/\
+    # pre[11]').send_keys(Keys.CONTROL, Keys.RETURN)
+
+    time.sleep(2) # 혹시모를 error 방지
+
+    ## 셀 실행 키 클릭
+    driver.find_element_by_xpath\
+    ('//*[@id="fe7ab7e0-e585-4bc0-88e5-00ab012f52a4"]/div[1]/div[6]/button/span').click()
+    
+    
+schedule.every().hour.at("10:00").do(analyze)
+
+
+## schedule 시작
+while True :
+    schedule.run_pending()
+
