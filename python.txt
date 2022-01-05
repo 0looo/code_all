@@ -382,6 +382,10 @@ DataFrame
 		: 단일행을 받을 때 /n도 같이 출력되니 조심
 		** import sys 필요
 		
+pickle
+	## 내용 수정 필요
+	present : RData와 흡사한 역활이라고 이해함
+		
 map
 	map(function, list or tuple or ..)
 		: 뒤에 들어오는 list에 요소들을 fuction 처리하여 list로 반환
