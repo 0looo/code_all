@@ -869,6 +869,9 @@ numpy
 	# 함수
 		np.load(*) :  확장자가 .npy인 파일을 불러들임
 		
+		np.where(조건,참,거짓)
+			: 조건에 따라 참 거짓을 출력함.(조건만 작성시 index출력)
+		
 		np.array(*) : *을 array로 변환
 
 		np.concatenate((arr1, arr2), ##) : array 합산
