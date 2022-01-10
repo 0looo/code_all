@@ -178,6 +178,9 @@ dict(사전)
 			: dict에 key가 있을 경우 해당하는 value, 없을 경우 ## 출력
 			
 DataFrame
+	: Matrix
+	: 반복문 작성시 columns값을 출력해줌
+	
 	저장
 		df.to_csv(파일명, sep = '')
 			* sep : 나누는 기준이 별도지정필요할때
