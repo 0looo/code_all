@@ -424,18 +424,23 @@ zip
 	pass
 		: 실행할 코드가 없다는 의미, 단순히 코드안에 TRUE 적는 것과 다를게 없음.
 
-Try(예외처리)
-	: error가 발생하는(예상되는) 코드 처리
-	# 사용방법
-	try :
-		문제예상되는 코드 작성
-	except ##:
-		error가 발생시 실행할 코드
-		## 안에 특정 error를 적어서 error별 처리를 다르게 할 수 있음
-	else :
-		error가 발생하지 않았을 때 실행할 코드
-	finally : 
-		error 유무와 상관없이 try 종료 후 실행할 문장
+Error
+	Try(예외처리)
+		: error가 발생하는(예상되는) 코드 처리
+		# 사용방법
+		try :
+			문제예상되는 코드 작성
+		except ##:
+			error가 발생시 실행할 코드
+			## 안에 특정 error를 적어서 error별 처리를 다르게 할 수 있음
+		else :
+			error가 발생하지 않았을 때 실행할 코드
+		finally : 
+			error 유무와 상관없이 try 종료 후 실행할 문장
+			
+	raise (에러발생시키기)
+		raise Exception('error 문구 작성 위치')
+			: error발생시키고 해당 error문구 작성
 		
 Txt 파일 생성 / 읽기
 	text = open('파일명.txt', #)
