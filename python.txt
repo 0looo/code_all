@@ -2,6 +2,10 @@ jupyter 사용관련 내용
 	window 창만 껐을때(powerShell 미종료시) 키는 방법
 		: localhost:8888
 			# 8888 = 기본적으로 설정하는 port, 만약 사용자가 변경했을 경우 해당하는 port 작성필요
+			
+	cmd 
+		jupyter notebook 폴더경로
+			## 폴더경로에 한글이 들어갈 경우 열리지 않음.
 
 os
 	import os
