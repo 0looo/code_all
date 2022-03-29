@@ -453,6 +453,9 @@ Txt 파일 생성 / 읽기
 	text.read()
 		: 전체 text 한번에 불러옴.
 	
+	text.write(string)
+		# 쓰기 모드시 : string으로 내용 작성 후 저장
+	
 	close (종료)
 		text.close()
 			: 관련하여 종료 
