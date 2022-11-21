@@ -453,6 +453,12 @@ Txt 파일 생성 / 읽기
 	text.read()
 		: 전체 text 한번에 불러옴.
 	
+	text.readline()
+		: 첫번째 한줄을 읽어옴
+	
+	text.readlines()
+		: list로 출력, \n 기준으로 하나의 요소로 인식하여 
+	
 	text.write(string)
 		# 쓰기 모드시 : string으로 내용 작성 후 저장
 	
