@@ -550,6 +550,14 @@ INDEX
 	: 출력이 2% ~ 4% 일때에만 효과가 있음(그외는 효과가 없음)
 	: 모든 table에 만들면 오히려 역효과가 발생함.
 	
+WITH 구문
+	WITH TABLE_NAME AS (SELECT ...)
+	SELECT ...
+	FROM TABLE_NAME 
+	
+		: SQL 상단에 하나의 테이블 생성 가능
+		: 임시테이블 중 한번 사용 후 제거시 유용하게 사용 가능
+	
 windows function
 	: col을 생성하여 조건에 맞는 값들을 새로운 행에 출력
 	: 작성위치 = select 다음 출력할 col 위치
