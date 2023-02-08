@@ -6,6 +6,14 @@ jupyter 사용관련 내용
 	cmd 
 		jupyter notebook 폴더경로
 			## 폴더경로에 한글이 들어갈 경우 열리지 않음.
+			
+package(module)
+	import package명
+	
+	module 수정시
+		: 그대로 import 할 경우 이전 module의 내용을 그대로 가져옴
+		--> 해결) sys.modules목록에서 해당 module제거
+			: sys.modules.pop('module명')
 
 os
 	import os
