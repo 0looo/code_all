@@ -165,6 +165,11 @@ list
 		list.pop(##)
 			: ## 을 비워둘경우 맨마지막 요소 출력 및 제거
 			: ##에 index값을 넣어서 추출가능
+			
+		list.difference(['요소1','요소2'])
+			: 요소1, 요소2를 제외한 list 출력
+			: dataframe col 제거시 유용
+			## 요소1이 불포함일때 무시하고 출력됨(error 
 	
 	요소 index 확인
 		list.index(#)
