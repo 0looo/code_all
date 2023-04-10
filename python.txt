@@ -351,7 +351,7 @@ DataFrame
 					2)pd.date_range(시작일자,종료일자) : 사이기간 자동출력(마지막날도 포함)
 
 	값 정렬
-		df.sort_values('col', ascending = Fales,)
+		df.sort_values('col', ascending = False,)
 			*col : col의 값을 기준으로 정렬 / by=['col']으로 기입가능
 
 	null처리
