@@ -1,0 +1,12 @@
+주석
+    한줄주석 : // 
+    구간주석 : /* */
+
+편의성 함수
+using namespace std;
+    함수앞에 std::를 붙히는 것을 생략가능하게 함
+
+include
+    iostream
+        cout << "string"
+            : string 출력
