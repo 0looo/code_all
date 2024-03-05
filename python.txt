@@ -15,6 +15,13 @@ package(module)
 		--> 해결) sys.modules목록에서 해당 module제거
 			: sys.modules.pop('module명')
 
+스크립트 설정
+	종료
+		exit()
+			: 별도라이브러리 필요없음 / 단점) 바로 종료되지 않을때가 많음
+		sys.exit(arg)
+			: sys 라이브러리에서 제공, arg에 string으로 종료와 동시에 멘트추출 가능
+
 os
 	import os
 	os.system(#)
